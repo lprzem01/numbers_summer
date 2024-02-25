@@ -1,7 +1,7 @@
 from main_Code import numbers_sum
 import pytest
 
-def test_numbers_sum(monkeypatch):
+def test_numbers_sum(monkeypatch: pytest.MonkeyPatch):
     """test to check if defoult data returns correct number"""
     # Monkeypatch the "input" function to return "no".
     monkeypatch.setattr('builtins.input', lambda _: "no")
@@ -9,7 +9,7 @@ def test_numbers_sum(monkeypatch):
     # Call the function and assert the output.
     assert numbers_sum() == "781.0"
 
-def test_data(monkeypatch):
+def test_data(monkeypatch: pytest.MonkeyPatch):
     """test to check if test data returns correct output"""
     # Monkeypatch the "input" function to return "no".
     monkeypatch.setattr('builtins.input', lambda _: "yes")
